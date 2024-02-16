@@ -23,5 +23,6 @@
 	"dependencies": {
 		"@sveltestrap/sveltestrap": "^6.2.5",
 		"svelte-toc": "^0.5.7"
-	}
+	},
+	"packageManager": "yarn@4.1.0"
 }
