@@ -112,4 +112,17 @@
     <p>The nodes of note are the CreateInstanceNode and the DestroyInstanceNode.</p>
 </div>
 
+<div class="section">
+    <h2 id="properties_example_scene">Example Scene: Adding and Removing Properties</h2>
+    <p>We have provided an example scene demonstrating basic noun creation as well as destruction during runtime using ActionVerbs.</p>
+    <div class="figure">
+        <img src="/images/add_properties_example_scene.png" alt="A screenshot of where to find the Adding and Removing Properties Scene asset.">
+        <p>A screenshot of where to find the Adding and Removing Properties Scene asset.</p>
+    </div>
+    <br/>
+    <p>Opening and playing this scene will present the player with a series of looping choices, allowing them to continuously create and destroy nouns.</p>
+    <p>Open the associated ActionVerb (Noun Creation and Destruction Verb.asset) in the Verb Editor to see the entire flow of logic.</p>
+    <p>The nodes of note are the CreateInstanceNode and the DestroyInstanceNode.</p>
+</div>
+
 <a href="/getting_started"><button class="next">Next: Getting Started</button></a>
