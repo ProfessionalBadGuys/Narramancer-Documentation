@@ -1,8 +1,8 @@
 
 <div class="section">
   <h2 id="overview">Overview</h2>
-  <p>Narramancer is a node-based scripting system with a saving and loading the game state built-in.</p>
-  <p>It can be used for branching conversations, as an npc behavior tree, or it can handle the over-all game loop logic.</p>
+  <p>Narramancer is a node-based scripting system where saving and loading the game state are built-in.</p>
+  <p>It can be used for branching conversations, for npc behavior trees, or to handle the over-all game loop logic.</p>
 </div>
 
 <div class="section">
