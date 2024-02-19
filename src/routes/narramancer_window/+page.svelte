@@ -1,48 +1,92 @@
 
 <div class="section">
-    <h2 id="verbs">Verbs</h2>
-    <p>A graph of nodes is called a Verb in Narramancer. Verb assets extend from Unity ScriptableObjects and exist as individual files within the project folder.</p>
-    <p>Verbs can also have inputs and outputs, which allow values of various types to be passed in and/or returned out.</p>
-    <p>Verbs come in two types: ValueVerbs and ActionVerbs.</p>
+    <h2 id="window">Narramancer Window</h2>
+    <p>The Narramancer Window acts as a hub for the main elements of your game, including the Verbs, the Nouns, and Global Variables.</p>
+    <p><i>Advanced note: the Narramancer Window is the properties panel for Narramancer Singleton, which is a ScriptableObject.</i></p>
+    <p>The window has two views: <a href="#editor_mode">Editor Mode</a> and <a href="#runtime_mode">Runtime Mode</a>.</p>
 </div>
 
 <div class="section">
-    <h2 id="action_verbs">Action Verbs</h2>
-    <p>Verbs that perform actions over realtime are called ActionVerbs.</p>
-    <p>ActionVerbs have access to a category of nodes referred to as RunnableNodes.</p>
-    <p>Depending on the nodes that they are made of, an ActionVerb may execute and complete instantatiously, take several seconds or minutes, or run until the player enters some kind of input.</p>
+    <h2 id="accessing">Accessing the Narramancer Window</h2>
+    <p>To open the Narramancer Window, use the menu bar at the top of the Unity Editor, choose Window -> Narramancer.</p>
+    <div class="figure">
+        <img src="/images/narramancer_window_menu_item.png" alt="The menu for opening the Narramancer Window">
+        <p>The menu for opening the Narramancer Window.</p>
+    </div>
+    <br/>
+    <p>The Narramancer Window will open up as a Unity Panel, and can be docked in a way like the Inspector panel or the Project panel.</p>
 </div>
 
 <div class="section">
-    <h2 id="action_verbs">Value Verbs</h2>
-    <p>Verbs that strictly get information are called ValueVerbs.</p>
-    <p>ValueVerbs don't run or execute in the same way that ActionVerbs do. They cannot use RunnableNodes, but still have access to all other basic nodes.</p>
+    <h2 id="editor_mode">Editor Mode</h2>
+    <p>The Editor mode allows you to attach starting nouns and verbs, as well as assign other values.</p>
+    <div class="figure">
+        <img src="/images/narramancer_window_editor_mode.png" alt="A screenshot of the Narramancer Window in Editor Mode">
+        <p>A screenshot of the Narramancer Window in Editor Mode.</p>
+    </div>
+    <br/>
+    <p>Editor Mode has four subviews: Nouns, Adjectives, Verbs, and <a href="#variables">Variables</a>.</p>
+    <p>The first three sub views allow you to assign the starting Nouns, Adjectives, and Verbs, respectively. Nouns applied this way will be instantiated on game start, and Verbs assigned this way will run immediately after.</p>
 </div>
 
 <div class="section">
-    <h2 id="creating_verbs">Creating Verbs</h2>
-    <p>There are two main ways to create new Verbs:</p>
+    <h2 id="variables">Variables</h2>
+    <p>Narramancer has a built-in 'variables' feature, which allows values to be assigned, accessed, and manipulated from various parts of the system.</p>
+    <p>The following section outlines what we call Global Variables. There are also <a href="/components#narramancer_scene">Scene Variables</a> and <a href="/verbs#inputs_outputs">Verb Variables</a>. The three 'scopes' differ in where they exist, but are similar in how that are used.</p>
+    <p>To use a variable, it must be defined prior to runtime and it must have a type and a name.</p>
+    <h4>Creating Variables</h4>
+    <p>Open the Narramancer window, use the Editor mode, switch to the Variables Tab, and add Variables using the variables list.</p>
+    <div class="figure">
+        <img src="/images/narramancer_window_variables.png" alt="A screenshot of the Variables tab within the Narramancer Window.">
+        <p>A screenshot of the Variables tab within the Narramancer Window. There are two variables defined: an integer</p>
+    </div>
+    <br/>
+    <h4>Starting Values</h4>
+    <p>The third field on the variables table is for the 'starting value' (for supported types). The variable will take on this value on game start.</p>
+    <h4>GameObject Starting Values</h4>
+    <p>Assigning GameObjects from within a scene to a variable's starting value is not supported. In order to reference in-scene GameObjects using variables, there are three ways:</p>
     <ol>
-        <li>
-            Right-click anywhere in the project and use the Asset Creation menu to create a new verb asset, either a ValueVerb OR and ActionVerb from under the Narramancer menu.
-        </li>
-        <li>
-            Create and add an ActionVerb to a Narramancer Scene component by using the plus button and selecting ‘Create new asset’:
-        </li>
+        <li>Use a <a href="/components#setglobalvariablesmonoBehaviour">SetGlobalVariablesMonoBehaviour</a> to assign the global variable on scene start.</li>
+        <li>Use a <a href="/components#narramancer_scene">Narramancer Scene</a> component and assign the desired GameObject to a Scene variable.</li>
+        <li>Use a <a href="/components#runactionverbmonobehaviour">RunActionVerbMonoBehaviour</a> and assign the GameObject to a Verb variable.</li>
     </ol>
+    <h4>Using Variables</h4>
+    <p>Global variables are assigned using <a href="/list_nodes#setvariablenode">SetVariableNodes</a> (with the setting for scope set to Global). Note that the node can only be used in ActionVerbs and will only assign the value when it runs.</p>
+    <div class="figure">
+        <img src="/images/set_global_variable_node.png" alt="A SetVariableNode assigning a value to the 'money' global variable.">
+        <p>A SetVariableNode assigning a value to the 'money' global variable.</p>
+    </div>
+    <br/>
+    <p>Accessing global variables can be done using a <a href="/list_nodes#getvariablenode">GetVariableNode</a> with its scope set to Global.</p>
+    <div class="figure">
+        <img src="/images/get_global_variable_node.png" alt="A GetVariableNode getting the value of the 'money' global variable.">
+        <p>A GetVariableNode getting the value of the 'money' global variable.</p>
+    </div>
+    <br/>
 </div>
 
 <div class="section">
-    <h2 id="running_verbs">Running Verbs</h2>
-    <p>Verbs will not run unless they are attached to a NodeRunner. To attach an ActionVerb to a NodeRunner, either:</p>
-    <ol>
-        <li>
-            Right-click anywhere in the project and use the Asset Creation menu to create a new verb asset, either a ValueVerb OR and ActionVerb from under the Narramancer menu.
-        </li>
-        <li>
-            Create and add an ActionVerb to a Narramancer Scene component by using the plus button and selecting ‘Create new asset’.
-        </li>
-    </ol>
+    <h2 id="runtime_mode">Runtime Mode</h2>
+    <p>During Unity Play Mode and using the Narramancer Runtime Mode, you can see the current table of NounInstances and manipulate various values.</p>
+    <div class="figure">
+        <img src="/images/narramancer_window_runtime_mode.png" alt="A screenshot of the Narramancer Window in Runtime Mode">
+        <p>A screenshot of the Narramancer Window in Runtime Mode.</p>
+    </div>
+    <br/>
+    <p>For debuging or testing purposes, you can see all aspects of each NounInstance, as well as add or remove properties and stats.</p>
 </div>
 
-<a href="/verb_editor"><button class="next">Next: Verb Editor</button></a>
+<div class="section">
+    <h2 id="singleton">Singleton</h2>
+    <p>The Narramancer system uses a Singleton pattern, meaning there is one static class (called an instance, not to be confused with NounInstances) that handles most of the functionality. The Narramancer Singleton is guaranteed to exist at game start because it is a ScriptableObject asset.</p>
+    <p>Script and code can call almost any Narramancer method using a static call to NarramancerSingleton.Instance.</p>
+    <div class="figure">
+        <img src="/images/narramancer_singleton_instance.png" alt="A code example of accessing the NarramancerSingleton instace.">
+        <p>A snippet of code with two uses of the NarramancerSingleton instance: the first one attempts to get a NounInstance, and the second one creates a new NounInstace.</p>
+    </div>
+    <br/>
+    <p>This allows you to have access to the table of nouns as well as other functionality.</p>
+    <p>The Narramancer Window is (more or less) the properties of the Narramancer Singleton ScriptableObject.</p>
+</div>
+
+<a href="/saving_loading"><button class="next">Next: Saving and Loading</button></a>

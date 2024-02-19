@@ -1,4 +1,5 @@
 
+
 <script>
     import Toc from 'svelte-toc'
 
@@ -29,7 +30,11 @@
                             <a href="/verb_editor">Verb Editor</a>
                             <a href="/nodes">Nodes</a>
                             <a href="/list_nodes">List of All Nodes</a>
-                            <a href="/list_nodes">Nouns</a>
+                            <a href="/nouns">Nouns</a>
+                            <a href="/narramancer_window">Narramancer Window</a>
+                            <a href="/saving_loading">Saving and Loading</a>
+                            <a href="/components">Components</a>
+                            <a href="/flags">Flags</a>
                         </div>
                     </div>
                 </Col>

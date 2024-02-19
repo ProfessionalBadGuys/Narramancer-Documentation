@@ -55,4 +55,35 @@
     </ol>
 </div>
 
+<div class="section">
+    <h2 id="inputs_outputs">Verb Inputs and Outputs</h2>
+    <p>Verbs can have input values and output values. Not be be confused with Node input and outpus, Verb inputs and outputs can be defined by the developer.</p>
+    <p>Input and output values are particularly useful when using ValueVerbs within other verbs: various arguments can be passed in to the ValueVerb as parameters, the logic of the ValueVerb executes, and the ValueVerb provides one or more values as outputs.</p>
+    <p>To add or edit a verb's inputs and outputs, select the verb asset and access the Inspector Window.</p>
+    <div class="figure">
+        <img src="/images/verb_inputs_and_outputs.png" alt="A Verb asset Inspector Window with Inputs and Outputs.">
+        <p>A Verb asset Inspector Window with Inputs and Outputs.</p>
+    </div>
+    <br/>
+    <p>Use the plus button on either the input list or the output list to create an input or an output respectively. You must assign what type the input/output is and you must give it a unique name.</p>
+    <p>Outputs for ValueVerbs are assigned using <a href="/list_nodes#outputnode">OutputNodes</a>.</p>
+    <div class="figure">
+        <img src="/images/output_node.png" alt="An OutputNode with an output named 'Result'.">
+        <p>An OutputNode with an output named 'Result'.</p>
+    </div>
+    <br/>
+    <p>Outputs for ActionVerbs are assigned using <a href="/list_nodes#setvariablenode">SetVariableNodes</a> with its scope set to Verb. Note that the node will only assign the value to the output variable when it executes.</p>
+    <div class="figure">
+        <img src="/images/set_variable_node.png" alt="A SetVariableNode assigning a value to the 'Result' variable.">
+        <p>A SetVariableNode assigning a value to the 'Result' variable.</p>
+    </div>
+    <br/>
+    <p>Accessing verb input values is the same for ActionVerbs and ValueVerbs and uses a <a href="/list_nodes#getvariablenode">GetVariableNode</a> with its scope set to Verb.</p>
+    <div class="figure">
+        <img src="/images/get_variable_node.png" alt="A GetVariableNode getting the value of the 'Result' variable.">
+        <p>A GetVariableNode getting the value of the 'Result' variable.</p>
+    </div>
+    <br/>
+</div>
+
 <a href="/verb_editor"><button class="next">Next: Verb Editor</button></a>

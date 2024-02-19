@@ -1,8 +1,9 @@
 <div class="section">
     <h2 id="nouns">Nouns</h2>
-    <p>In addition to handling game logic flow, Narramancer provides a general-purpose table of the 'things' in your game.</p>
-    <p>These things may or may not be associated with GameObjects, especially as scenes are unloaded and changed, but the game needs some way of remembering them. The various things in your game may include characters, equipment, items, or areas.</p>
-    <p>The Narramancer system makes no assumptions about what your things are and refers to them simply as <strong>Nouns</strong>. Nouns are simply named containers with no inherent value <strong>until</strong> they are attached with developer-defined <a href="#adjectives">adjectives</a>.</p>
+    <p>In addition to handling game logic flow, Narramancer provides a general-purpose table of the 'things' in your game. The various things in your game may include characters, equipment, items, or areas.</p>
+    <p>The Narramancer system makes no assumptions about what your things are and refers to them simply as <strong>Nouns</strong>.</p>
+    <p>These things may or may not be associated with GameObjects, but the aspects of a noun are remembered even when scenes are unloaded and GameObjects are destroyed.</p>
+    <p>Nouns are simply named containers with no inherent value <strong>until</strong> they are attached with developer-defined <a href="#adjectives">adjectives</a>.</p>
     <p>Structuring the characters and items in your game as Narramancer Nouns has two distinct advantages:</p>
     <ol>
         <li>
@@ -30,14 +31,16 @@
     <p>Nouns can also be created from the Asset Creation Menu by right-clicking somewhere in the project, and then choosing Create -> Narramancer -> Noun from the context menu. This will create a Noun Asset at the given location but will NOT automatically add the Noun to Narramancer's global list of Nouns.</p>
     <h4>Method 3</h4>
     <p>Nouns do not necessarily need to be associated with an asset (ie: NounScriptableObject).</p>
-    <p>You can create nouns at runtime using ActionVerbs and the CreateNounNode. Nouns created this way are automatically registered with the Narramancer table.</p>
+    <p>You can create nouns at runtime using ActionVerbs and the <a href="/list_nodes#createinstancenode">CreateInstanceNode</a>. Nouns created this way are automatically registered with the Narramancer table.</p>
+    <h4>Method 4</h4>
+    <p>You can create nouns using GameObjects through the <a href="/components#createnounforgameobject">CreateNounForGameObject</a> component. Nouns created this way are automatically registered with the Narramancer table AND coupled with their given GameObject.</p>
 </div>
 
 <div class="section">
     <h2 id="instances">Instances</h2>
     <p>An important distinction to make is between a NounScriptableObject and a NounInstance.</p>
     <p>A NounScriptableObject exists as an asset prior to the game starting and is used to create a NounInstance. The values of a NounScriptableObject represent the Noun's <strong>starting values and qualities</strong>, but changes made to the NounInstance during runtime are <strong>not</strong> applied to the NounScriptableObject and vice-versa.</p>
-    <p>A NounInstance represents a mutable Noun object and exists only while the game is running. It may have been created from a NounScriptableObject (ie: if it was created using Methods 1 or 2) but not necessarily (as is the case if it was created using Method 3).</p>
+    <p>A NounInstance represents a mutable Noun object and exists only while the game is running. It may have been created from a NounScriptableObject (ie: if it was created using Methods 1 or 2) but not necessarily (as is the case if it was created using Method 3 or 4).</p>
     <p>That being said, NounScriptableObjects can be used to find their corresponding NounInstance by using a GetInstanceNode.</p>
     <p>Within verbs and nodes, Nouns and NounInstances are typically referred to as just Instances.</p>
 </div>
@@ -109,20 +112,20 @@
     <br/>
     <p>Opening and playing this scene will present the player with a series of looping choices, allowing them to continuously create and destroy nouns.</p>
     <p>Open the associated ActionVerb (Noun Creation and Destruction Verb.asset) in the Verb Editor to see the entire flow of logic.</p>
-    <p>The nodes of note are the CreateInstanceNode and the DestroyInstanceNode.</p>
+    <p>The nodes of note are the <a href="/list_nodes#createinstancenode">CreateInstanceNode</a> and the <a href="/list_nodes#destroyinstancenode">DestroyInstanceNode</a>.</p>
 </div>
 
 <div class="section">
     <h2 id="properties_example_scene">Example Scene: Adding and Removing Properties</h2>
-    <p>We have provided an example scene demonstrating basic noun creation as well as destruction during runtime using ActionVerbs.</p>
+    <p>To see an example of adding and removing properties during runtime please see the 'Adding and Removing Properties' Example Scene.</p>
     <div class="figure">
         <img src="/images/add_properties_example_scene.png" alt="A screenshot of where to find the Adding and Removing Properties Scene asset.">
         <p>A screenshot of where to find the Adding and Removing Properties Scene asset.</p>
     </div>
     <br/>
-    <p>Opening and playing this scene will present the player with a series of looping choices, allowing them to continuously create and destroy nouns.</p>
-    <p>Open the associated ActionVerb (Noun Creation and Destruction Verb.asset) in the Verb Editor to see the entire flow of logic.</p>
-    <p>The nodes of note are the CreateInstanceNode and the DestroyInstanceNode.</p>
+    <p>This example will create a handful of nouns and automatically add a property to them. The player then is presented with a looping sequence of choices which allows them to see nouns that have the property vs nouns that do not, as well as add or remove that property.</p>
+    <p>The nodes of note are the <a href="/list_nodes#addpropertiesnode">AddPropertiesNode</a> and the <a href="/list_nodes#removepropertiesnode">RemovePropertiesNode</a>.</p>
+    <p>Additional nodes of interest are the <a href="/list_nodes#getinstancesnode">GetInstancesNode</a>, the <a href="/list_nodes#listforeachnode">ListForEachNode</a>, and the <a href="/list_nodes#sequenceofnodesnode">SequenceOfNodesNode</a>.</p>
 </div>
 
-<a href="/getting_started"><button class="next">Next: Getting Started</button></a>
+<a href="/narramancer_window"><button class="next">Next: Narramancer Window</button></a>

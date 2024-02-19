@@ -63,7 +63,9 @@
         <p>The Node Context Window, which creates new nodes in the given Verb.</p>
     </div>
     <br/>
-    <p>The various possible nodes are organized by function. To find a given node quickly, choose the ‘Search…’ option and use the Node Search Dialog to find the node by its name by simply typing it.</p>
+    <p>The various possible nodes are organized by their function.</p>
+    <h4>Search Nodes Window</h4>
+    <p>To find a given node quickly, choose the ‘Search…’ option from the Create Node Context Menu and use the Node Search Dialog to find the node by name.</p>
     <div class="figure">
         <img src="/images/search_node_dialog_window.png" alt="Screenshot of the Node Search Window.">
         <p>A screenshot of the Node Search Window, where you can search for a specific node by typing in its name.</p>
@@ -79,6 +81,7 @@
         <p>A demonstration of creating a new node.</p>
     </div>
     <br/>
+    <p>Selecting the node type will create the given node at the given location.</p>
 </div>
 
 <div class="section">
@@ -94,4 +97,4 @@
     <p>For nodes that have input and output ports, the process of connecting them is the same. NOTE: ports can only be connected if they are of the same type.</p>
 </div>
 
-<a href="/nodes"><button class="next">Next: Nodes</button></a>
+<a href="/list_nodes"><button class="next">Next: A List of All Node Types</button></a>

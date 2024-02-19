@@ -1,7 +1,8 @@
 
 <div class="section">
   <h2 id="overview">Overview</h2>
-  <p>Narramancer is a node-based scripting system with a save system built-in.</p>
+  <p>Narramancer is a node-based scripting system with a saving and loading the game state built-in.</p>
+  <p>It can be used for branching conversations, as an npc behavior tree, or it can handle the over-all game loop logic.</p>
 </div>
 
 <div class="section">
@@ -53,7 +54,7 @@
     </tr>
   </table>
   <br/>
-  <p>(To be honest and fair, if you are making a visual novel game and would prefer text-based scripting over node-based then we recommend using Naninovel. It is a feature-rich engine with years of experience and support.)</p>
+  <p>(To be honest, if you are making a visual novel game and would prefer text-based scripting over node-based then we recommend using Naninovel. It is a feature-rich engine with years of experience and support.)</p>
 </div>
 
 <div class="section">
@@ -80,7 +81,7 @@
       Scene Independent
     </li>
     <li>
-      Blackboards or General-Purpose game variables
+      General-Purpose variables
     </li>
     <li>
       Little or no coding required.

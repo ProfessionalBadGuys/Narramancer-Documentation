@@ -18,6 +18,10 @@ main {
   background-color: #04090e;
 }
 
+a {
+  color: #7c89c7;
+}
+
 .sidecolumn {
 	height: 100vh;
 	position: sticky;
