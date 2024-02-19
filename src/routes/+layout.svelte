@@ -11,7 +11,7 @@
 
     <div class="navbar">
         <Navbar color="dark" fixed="top">
-            Narramancer
+            <a href="/">Narramancer</a>
         </Navbar>
     </div>
 
