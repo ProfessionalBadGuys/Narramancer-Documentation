@@ -32,7 +32,7 @@
 <div class="section">
     <h2 id="variables">Variables</h2>
     <p>Narramancer has a built-in 'variables' feature, which allows values to be assigned, accessed, and manipulated from various parts of the system.</p>
-    <p>The following section outlines what we call Global Variables. There are also <a href="/components#narramancer_scene">Scene Variables</a> and <a href="/verbs#inputs_outputs">Verb Variables</a>. The three 'scopes' differ in where they exist, but are similar in how that are used.</p>
+    <p>The following section outlines what we call Global Variables. There are also <a href="/components#narramancer_scene">Scene Variables</a> and <a href="/verbs#inputs_outputs">Verb Variables</a>. The three 'scopes' differ in where they exist, but are similar in how they are used.</p>
     <p>To use a variable, it must be defined prior to runtime and it must have a type and a name.</p>
     <h4>Creating Variables</h4>
     <p>Open the Narramancer window, use the Editor mode, switch to the Variables Tab, and add Variables using the variables list.</p>

@@ -23,8 +23,8 @@
       Present the player with two or more choices as selectable buttons. Wait for the player to choose one.
     </li>
   </ol>
-  <p>A unit of game logic can be something simple that happens instantatiously or something complex that happens over realtime.</p>
-  <p>Narramancer calls these units Nodes (more specifically a RunnableNodes) and has dozens of different Nodes for all kinds of purposes.</p>
+  <p>A unit of game logic can be something simple that happens instantaneously or something complex that happens over realtime.</p>
+  <p>Narramancer calls these units Nodes (more specifically RunnableNodes) and has dozens of different Nodes for all kinds of purposes.</p>
   <p></p>
 </div>
 

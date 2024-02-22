@@ -11,8 +11,8 @@
 
 <div class="section">
 <h2 id="initialization">Initialization</h2>
-<p>Before using Narrmanacer for the first time, you must trigger initalization by opening the Narramancer window.</p>
-<p>Open the Narramancer Window by choose ‘Window -> Narramancer’ from the menu bar.</p>
+<p>Before using Narrmanacer for the first time, you must trigger initialization by opening the Narramancer window.</p>
+<p>Open the Narramancer Window by choosing  ‘Window -> Narramancer’ from the menu bar.</p>
 </div>
 
 <div class="section">
