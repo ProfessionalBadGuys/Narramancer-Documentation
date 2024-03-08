@@ -3,15 +3,18 @@
 <script>
     import Toc from 'svelte-toc'
 
-    import { Navbar, Container, Row, Col } from '@sveltestrap/sveltestrap';
+    import { Navbar, NavbarBrand, NavItem, NavLink, Container, Row, Col } from '@sveltestrap/sveltestrap';
 
 </script>
 
 <div class="bodybackground">
 
     <div class="navbar">
-        <Navbar color="dark" fixed="top">
-            <a href="/">Narramancer</a>
+        <Navbar color="dark" fixed="top" dark=true>
+            <NavbarBrand  href="/">Narramancer</NavbarBrand >
+            <NavLink href="https://assetstore.unity.com/packages/tools/behavior-ai/narramancer-269301">Asset Store</NavLink>
+            <NavLink href="https://www.youtube.com/@ProfessionalBadGuys/videos">Video Tutorials</NavLink>
+            <NavLink href="https://discord.gg/CKqJXfJVzQ">Discord</NavLink>
         </Navbar>
     </div>
 
