@@ -44,6 +44,7 @@
         
                 <Col xs="7">
                     <main>
+                        <br/>
                         <slot></slot>
                     </main>
                 </Col>

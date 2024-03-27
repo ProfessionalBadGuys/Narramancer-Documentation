@@ -6,6 +6,8 @@
 <div class="section">
     <h2 id="serializing_components">Serializing Parts of a Scene</h2>
     <p>In addition to verbs and nouns, you will probably need various aspects of your scene saved. In order to tell Narramancer which GameObjects need to be remembered, you must attach various Narramancer components to them.</p>
+    <h4 id="overview">SerializeActive</h4>
+    <p>The SerializeActive component will save and restore whether the attached GameObject is set to Active or disabled.</p>
     <h4 id="overview">SerializeTransform</h4>
     <p>The SerializeTransform component will save and load all aspects of a GameObject's Transform, including its position and rotation. This component is required to use Translate and Rotate Nodes on a GameObject.</p>
     <h4 id="overview">SerializeImage</h4>
@@ -16,6 +18,8 @@
     <p>The SerializeText component will save and load the text value of a GameObject's Text Component.</p>
     <h4 id="overview">SerializeSpriteRenderer</h4>
     <p>The SerializeSpriteRenderer component will save and load the sprite assigned to a GameObject's SpriteRenderer.</p>
+    <h4 id="overview">SerializeAnimation</h4>
+    <p>The SerializeAnimation component will save and load the values of a Unity.Animation component, including the currently playing animation.</p>
 </div>
 
 <div class="section">
