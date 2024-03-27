@@ -39,7 +39,7 @@
 </div>
 
 <div class="section">
-    <h2 id="dynamically_typed">Dynamicly Typed Node Ports</h2>
+    <h2 id="dynamically_typed">Dynamically Typed Node Ports</h2>
     <p>Some nodes can handle various types and use a dynamicly typed port system. The node, initally, does not have ports, but once you tell it what type to use using the dropdown, the ports will be dynamically created.</p>
 </div>
 
